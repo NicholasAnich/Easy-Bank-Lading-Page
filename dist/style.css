@@ -105,9 +105,33 @@ a:hover {
 }
 
 .container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+.container--pall {
   padding-top: 2.25rem;
   padding-right: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.25rem;
+  padding-left: 1.5rem;
+}
+.container--py {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+.container--px {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.container--pt {
+  padding-top: 2.25rem;
+}
+.container--pr {
+  padding-right: 1.5rem;
+}
+.container--pb {
+  padding-bottom: 2.25rem;
+}
+.container--pl {
   padding-left: 1.5rem;
 }
 
@@ -241,14 +265,29 @@ button:hover,
   opacity: 1;
 }
 
+@media (min-width: 64em) {
+  .hero {
+    display: flex;
+    align-items: center;
+  }
+}
 .hero__image {
-  border: 1px solid magenta;
   position: relative;
   background-image: url("/images/bg-intro-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 17.5rem;
+}
+@media (min-width: 64em) {
+  .hero__image {
+    flex: 3;
+    order: 2;
+    height: 100%;
+    height: 41rem;
+    background-image: url("/images/bg-intro-desktop.svg");
+    background-position: left-center;
+  }
 }
 .hero__image::before {
   content: "";
@@ -262,6 +301,13 @@ button:hover,
 }
 .hero__text {
   text-align: center;
+}
+@media (min-width: 64em) {
+  .hero__text {
+    flex: 2;
+    order: 1;
+    text-align: left;
+  }
 }
 .hero__text h1 {
   font-weight: 300;
