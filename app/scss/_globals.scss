@@ -34,9 +34,9 @@ h1,
 h2,
 h3 {
     font-weight: 300;
-    margin-top: 0;
     line-height: 1.15;
     color: $darkBlue;
+    margin-top: 0;
 }
 
 h1 {
@@ -146,6 +146,7 @@ a:hover {
 // Buttons
 button,
 .button {
+    position: relative;
     display: inline-block;
     padding: 0.875rem 2.1875rem;
     background: linear-gradient(to right, $limeGreen, $brightCyan);
@@ -156,9 +157,22 @@ button,
     font-weight: 700;
     font-size: $font-sm;
     transition: opacity 200ms ease-in-out;
+    overflow: hidden;
 
-    &:hover {
-        opacity: 0.75;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.25);
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover::before {
+        opacity: 1;
     }
 }
 

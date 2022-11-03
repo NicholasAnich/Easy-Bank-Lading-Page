@@ -103,9 +103,9 @@ h1,
 h2,
 h3 {
   font-weight: 300;
-  margin-top: 0;
   line-height: 1.15;
   color: hsl(233deg, 26%, 24%);
+  margin-top: 0;
 }
 
 h1 {
@@ -208,6 +208,7 @@ a:hover {
 
 button,
 .button {
+  position: relative;
   display: inline-block;
   padding: 0.875rem 2.1875rem;
   background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
@@ -218,10 +219,23 @@ button,
   font-weight: 700;
   font-size: 0.875rem;
   transition: opacity 200ms ease-in-out;
+  overflow: hidden;
 }
-button:hover,
-.button:hover {
-  opacity: 0.75;
+button::before,
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+button:hover::before,
+.button:hover::before {
+  opacity: 1;
 }
 
 @media (max-width: 63.9375em) {
@@ -575,6 +589,12 @@ button:hover,
   display: inline-block;
   height: 1.25rem;
 }
+.footer__social a svg path {
+  transition: fill 150ms ease;
+}
+.footer__social a:hover svg path {
+  fill: hsl(158deg, 61%, 49%);
+}
 .footer__social a:not(:last-child) {
   margin-right: 1rem;
 }
@@ -607,6 +627,10 @@ button:hover,
 }
 .footer__links a {
   line-height: 2.25;
+  transition: color 150ms ease;
+}
+.footer__links a:hover {
+  color: hsl(158deg, 61%, 49%);
 }
 @media (min-width: 64em) {
   .footer__cta {
