@@ -25,7 +25,5 @@ hamburger.addEventListener("click", () => {
             e.classList.remove("fade-out");
             e.classList.add("fade-in");
         });
-        // overlay.classList.remove("fade-out");
-        // overlay.classList.add("fade-in");
     }
 });

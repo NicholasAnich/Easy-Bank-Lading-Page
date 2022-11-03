@@ -88,6 +88,7 @@ body {
   color: hsl(233deg, 8%, 62%);
   line-height: 1.3;
   min-height: 200vh;
+  overflow-x: hidden;
 }
 @media (min-width: 64em) {
   body {
@@ -525,4 +526,12 @@ button:hover,
 }
 .article__description {
   font-size: 0.8125rem;
+}
+
+.footer {
+  background-color: hsl(233deg, 26%, 24%);
+  color: hsl(0deg, 0%, 100%);
+}
+.footer__logo {
+  color: hsl(0deg, 0%, 100%);
 }/*# sourceMappingURL=style.css.map */
